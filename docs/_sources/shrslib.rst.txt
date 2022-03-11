@@ -1,0 +1,31 @@
+shrslib package
+===============
+
+shrslib.basicfunc module
+------------------------
+
+.. automodule:: shrslib.basicfunc
+   :members: read_sequence_file, complementary_sequence, calculate_Tm_value
+   :undoc-members:
+   :show-inheritance:
+
+.. autoclass:: nucleotide_sequence
+   :members: Decompress, Nucleotide_composition, PCR_amplicon, calculate_Tm_value, calculate_flexibility, complementary_sequence, search_position
+
+
+shrslib.explore module
+----------------------
+
+.. automodule:: shrslib.explore
+   :members: search_position, PCR_amplicon
+   :undoc-members:
+   :show-inheritance:
+
+
+shrslib.scores module
+---------------------
+
+.. automodule:: shrslib.scores
+   :members: calculate_flexibility, calculate_score, calculate_diff_length_score, fragment_size_distance, array_diff, sequence_duplicated
+   :undoc-members:
+   :show-inheritance:

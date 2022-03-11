@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shrslib package &mdash; shrslib  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to shrslib’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> shrslib
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">shrslib package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-shrslib.basicfunc">shrslib.basicfunc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-shrslib.explore">shrslib.explore module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-shrslib.scores">shrslib.scores module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">shrslib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>shrslib package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/shrslib.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="shrslib-package">
+<h1>shrslib package<a class="headerlink" href="#shrslib-package" title="Permalink to this headline"></a></h1>
+<section id="module-shrslib.basicfunc">
+<span id="shrslib-basicfunc-module"></span><h2>shrslib.basicfunc module<a class="headerlink" href="#module-shrslib.basicfunc" title="Permalink to this headline"></a></h2>
+<p>Copyright (c) 2022 Masayuki TAKAHASHI</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.basicfunc.calculate_Tm_value">
+<span class="sig-prename descclassname"><span class="pre">shrslib.basicfunc.</span></span><span class="sig-name descname"><span class="pre">calculate_Tm_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Na_conc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.calculate_Tm_value" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Tm value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequence</strong> (<em>str</em><em>, </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a><em>, </em><em>list</em><em>, </em><em>tuple</em><em> or </em><em>numpy.ndarray</em>) – The sequence for which you would like to know the Tm value, or its list, tuple, or ndarray. (required)</p></li>
+<li><p><strong>conc</strong> (<em>float</em>) – The concentration of a primer when PCR amplification is performed. (default: 0.5 picomole/microliter)</p></li>
+<li><p><strong>Na_conc</strong> (<em>float</em>) – The concentration of sodium when PCR amplification is performed. (default: 0.05 mole/liter)</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – Choose a method from ‘min’, ‘max’, ‘average’, or ‘’. (default: min)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Tm_value</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.float or list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.basicfunc.complementary_sequence">
+<span class="sig-prename descclassname"><span class="pre">shrslib.basicfunc.</span></span><span class="sig-name descname"><span class="pre">complementary_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.complementary_sequence" title="Permalink to this definition"></a></dt>
+<dd><p>Convert an input sequence to a complementary sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>sequence</strong> (<em>str</em><em>, </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a><em>, </em><em>list</em><em>, </em><em>tuple</em>) – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>New_sequences</strong> – The complementary sequence of the sequence in the object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.basicfunc.read_sequence_file">
+<span class="sig-prename descclassname"><span class="pre">shrslib.basicfunc.</span></span><span class="sig-name descname"><span class="pre">read_sequence_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fasta'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.read_sequence_file" title="Permalink to this definition"></a></dt>
+<dd><p>Read a sequence file. FASTA, Multi-FASTA, and GenBank sequence format files are accepted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<em>str</em>) – File path. (required)</p></li>
+<li><p><strong>format</strong> (<em>str</em>) – ‘fasta’ or ‘genbank’ (default: fasta)</p></li>
+<li><p><strong>Feature</strong> (<em>bool</em>) – The annotations are extracted if the GenBank format is input when True is specified. (default: False)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sequences</strong> – A list will be returned as follows. [{‘sequence name’:sequence &lt;nucleotide_sequence&gt;}, input sequence number, average length of input sequence].
+In cases in which True is specified in a Feature argument, [{‘sequence name’:[sequence &lt;nucleotide_sequence&gt;, feature]}, input sequence number, average length of input sequence].</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">shrslib.basicfunc.</span></span><span class="sig-name descname"><span class="pre">nucleotide_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+<p>Nucleotide sequence definition.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.string">
+<span class="sig-name descname"><span class="pre">string</span></span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.string" title="Permalink to this definition"></a></dt>
+<dd><p>Input character</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.description" title="Permalink to this definition"></a></dt>
+<dd><p>Nuclotide sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.sequence_length">
+<span class="sig-name descname"><span class="pre">sequence_length</span></span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.sequence_length" title="Permalink to this definition"></a></dt>
+<dd><p>Nucleotide sequence length (nt).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.Decompress">
+<span class="sig-name descname"><span class="pre">Decompress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.Decompress" title="Permalink to this definition"></a></dt>
+<dd><p>Generate the list of nucleotide sequences converted from a wobble base pair to ATGC from a sequence that has a wobble base pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sequences</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.Nucleotide_composition">
+<span class="sig-name descname"><span class="pre">Nucleotide_composition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.Nucleotide_composition" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the nucleotide composition.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.PCR_amplicon">
+<span class="sig-name descname"><span class="pre">PCR_amplicon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Single_amplicon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Sequence_Only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplicon_size_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Warning_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circularDNAtemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.PCR_amplicon" title="Permalink to this definition"></a></dt>
+<dd><p>In silico PCR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>forward</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – Forward primer sequence (required).</p></li>
+<li><p><strong>reverse</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – Reverse primer sequence (required).</p></li>
+<li><p><strong>allowance</strong> (<em>int</em>) – The acceptable mismatch number. (default: 0)</p></li>
+<li><p><strong>Single_amplicon</strong> (<em>bool</em>) – All amplicons that will be amplified by an input primer set are outputed as list when False is specified. (default: True)</p></li>
+<li><p><strong>Sequence_Only</strong> (<em>bool</em>) – The start and end positions of an amplicon in template sequence are outputed with the amplicon sequence when False is specified. (default: True)</p></li>
+<li><p><strong>Warning_ignore</strong> (<em>bool</em>) – Show all warnings if specify True. (default: False)</p></li>
+<li><p><strong>circularDNAtemplate</strong> (<em>bool</em>) – Specify True if the input sequence is circular DNA. (default: False)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>PCR_amplicon</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str or list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.calculate_Tm_value">
+<span class="sig-name descname"><span class="pre">calculate_Tm_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Na_conc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.calculate_Tm_value" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Tm value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conc</strong> (<em>float</em>) – The concentration of a primer when PCR amplification is performed. (default: 0.5 picomole/microliter)</p></li>
+<li><p><strong>Na_conc</strong> (<em>float</em>) – The concentration of sodium when PCR amplification is performed. (default: 0.05 mole/liter)</p></li>
+<li><p><strong>mode</strong> (<em>str</em>) – Choose a method from ‘min’, ‘max’, ‘average’, or ‘’. (default: min)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Tm_value</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.float or list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.calculate_flexibility">
+<span class="sig-name descname"><span class="pre">calculate_flexibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detailed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.calculate_flexibility" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the score for degeneracy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>detailed</strong> (<em>bool</em>) – The score when specifying True will be more accurate. (default: False)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Flexibility</strong> – The higher the score is, the more wobble base pairs the sequence has.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.complementary_sequence">
+<span class="sig-name descname"><span class="pre">complementary_sequence</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.complementary_sequence" title="Permalink to this definition"></a></dt>
+<dd><p>Convert an input sequence to a complementary sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>None</strong> – </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>New_sequences</strong> – The complementary sequence of the sequence in the object.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="shrslib.basicfunc.nucleotide_sequence.search_position">
+<span class="sig-name descname"><span class="pre">search_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">evaluating_sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Match_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circularDNAtemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.basicfunc.nucleotide_sequence.search_position" title="Permalink to this definition"></a></dt>
+<dd><p>Search an annealing site position .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>evaluating_sequence</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – The sequence for which you want to identify the annealing site position in a template sequence.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>Start_position</strong> – The annealing site position between an evaluated sequence and a template (self) sequence.
+The absolute value of a position number indicates the onset point of the annealing site of a template sequence.
+e.g., If the “evaluating_sequence” is “ATGC”, {“ATGC”: [10, −35]} will be obtained.</p>
+<blockquote>
+<div><p>Template : ttggaatgagATGCtgtgaacagtcgtatatacgcGCATcgagattacgctattcgcgcggcg</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-shrslib.explore">
+<span id="shrslib-explore-module"></span><h2>shrslib.explore module<a class="headerlink" href="#module-shrslib.explore" title="Permalink to this headline"></a></h2>
+<p>Copyright (c) 2022 Masayuki TAKAHASHI</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.explore.PCR_amplicon">
+<span class="sig-prename descclassname"><span class="pre">shrslib.explore.</span></span><span class="sig-name descname"><span class="pre">PCR_amplicon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">forward</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Single_amplicon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Sequence_Only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplicon_size_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Warning_ignore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circularDNAtemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.explore.PCR_amplicon" title="Permalink to this definition"></a></dt>
+<dd><p>In silico PCR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>forward</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – Forward primer sequence (required).</p></li>
+<li><p><strong>reverse</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – Reverse primer sequence (required).</p></li>
+<li><p><strong>template</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – Template DNA sequence (required).</p></li>
+<li><p><strong>Single_amplicon</strong> (<em>bool</em>) – All amplicons that will be amplified by an input primer set are outputed as list when False is specified. (default: True)</p></li>
+<li><p><strong>Sequence_Only</strong> (<em>bool</em>) – The start and end positions of an amplicon in template sequence are outputed with the amplicon sequence when False is specified. (default: True)</p></li>
+<li><p><strong>amplicon_size_limit</strong> (<em>int</em>) – The upper limit of amplicon size. (default: 10,000)</p></li>
+<li><p><strong>allowance</strong> (<em>int</em>) – The acceptable mismatch number. (default: 0)</p></li>
+<li><p><strong>Warning_ignore</strong> (<em>bool</em>) – Show all warnings if True is specified. (default: False)</p></li>
+<li><p><strong>circularDNAtemplate</strong> (<em>bool</em>) – Specify True if the input sequence is circular DNA. (default: False)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>PCR_amplicon</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str or list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.explore.search_position">
+<span class="sig-prename descclassname"><span class="pre">shrslib.explore.</span></span><span class="sig-name descname"><span class="pre">search_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Combination</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluating_sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allowance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_distance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Position_list</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">array([],</span> <span class="pre">dtype=float64)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Match_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Maximum_annealing_site_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">circularDNAtemplate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.explore.search_position" title="Permalink to this definition"></a></dt>
+<dd><p>Search an annealing site position .</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Combination</strong> (<em>list</em>) – </p></li>
+<li><p><strong>evaluating_sequence</strong> (<em>str ot nucleotide_sequence</em>) – </p></li>
+<li><p><strong>input_sequence</strong> (<em>str ot nucleotide_sequence</em>) – Evaluating sequence is the sequence for which you want to identify the annealing site position in a input sequence.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>Start_position</strong> – The annealing site position between an evaluated sequence and a input sequence.
+The absolute value of a position number indicates the onset point of the annealing site of a input sequence.
+e.g., If the “evaluating_sequence” is “ATGC” and the “input_sequence” is following sequence, {“ATGC”: [10, −35]} will be obtained.</p>
+<blockquote>
+<div><p>Template : ttggaatgagATGCtgtgaacagtcgtatatacgcGCATcgagattacgctattcgcgcggcg</p>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-shrslib.scores">
+<span id="shrslib-scores-module"></span><h2>shrslib.scores module<a class="headerlink" href="#module-shrslib.scores" title="Permalink to this headline"></a></h2>
+<p>Copyright (c) 2022 Masayuki TAKAHASHI</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.scores.array_diff">
+<span class="sig-prename descclassname"><span class="pre">shrslib.scores.</span></span><span class="sig-name descname"><span class="pre">array_diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arr2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separation_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.scores.array_diff" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the difference between two arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>arr1</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>numpy.ndarray</em>) – </p></li>
+<li><p><strong>arr2</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>list</em><em>, </em><em>tuple</em><em>, </em><em>numpy.ndarray</em>) – </p></li>
+<li><p><strong>lower</strong> (<em>int</em><em>, </em><em>float</em>) – </p></li>
+<li><p><strong>upper</strong> (<em>int</em><em>, </em><em>float</em>) – </p></li>
+<li><p><strong>logical</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>separation_key</strong> (<em>int</em><em>, </em><em>float</em><em>, </em><em>list of int</em><em>, </em><em>list of float</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Result</strong> – A list containing the subtract value is returned at default settings.
+When the logical is True, it returns a logical value.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Subtract arr1 from arr2.
+Subtraction across Separation_key is NOT performed.
+For example, arr1 is [1, 1000, 10000], arr2 is [50, 1100, 10150], lower is 40 and upper is 400.
+The answer [49, 100, 150] will be obtained when the Separation key is the default value (default: −1).
+However, when the Separation key is 1050, [49, 150] will be obtained.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.scores.calculate_diff_length_score">
+<span class="sig-prename descclassname"><span class="pre">shrslib.scores.</span></span><span class="sig-name descname"><span class="pre">calculate_diff_length_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence_pair_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Reverse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pair_logical</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_sequence_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.scores.calculate_diff_length_score" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate similarity between two different length sequences. The higher the value is, the more similar the two sequences are.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequence_pair_set</strong> (<em>tuple of two sequences</em><em>, </em><em>list of two sequences</em><em> or </em><em>list of them</em>) – </p></li>
+<li><p><strong>Reverse</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>pair_logical</strong> (<em>bool</em>) – Return True if the score is 1, when ‘pair_logical’ is True.</p></li>
+<li><p><strong>return_sequence_name</strong> (<em>bool</em>) – Return two input sequences and its score when ‘return_sequence_name’ is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Similarity_score</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.scores.calculate_flexibility">
+<span class="sig-prename descclassname"><span class="pre">shrslib.scores.</span></span><span class="sig-name descname"><span class="pre">calculate_flexibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detailed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.scores.calculate_flexibility" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the score for degeneracy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequence</strong> (<em>str</em><em>, </em><em>list</em><em> or </em><em>tuple</em>) – </p></li>
+<li><p><strong>detailed</strong> (<em>bool</em>) – The score when specifying True will be more accurate. (default: False)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Flexibility</strong> – The higher the score is, the more wobble base pairs the sequence has.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.scores.calculate_score">
+<span class="sig-prename descclassname"><span class="pre">shrslib.scores.</span></span><span class="sig-name descname"><span class="pre">calculate_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seq1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seq2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.scores.calculate_score" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the similarity between two sequences. The higher the value is, the more similar the two sequences are.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seq1</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – </p></li>
+<li><p><strong>seq2</strong> (<em>str</em><em> or </em><a class="reference internal" href="#shrslib.basicfunc.nucleotide_sequence" title="shrslib.basicfunc.nucleotide_sequence"><em>nucleotide_sequence</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Similarity_score</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.scores.fragment_size_distance">
+<span class="sig-prename descclassname"><span class="pre">shrslib.scores.</span></span><span class="sig-name descname"><span class="pre">fragment_size_distance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.scores.fragment_size_distance" title="Permalink to this definition"></a></dt>
+<dd><p>Function for calculating the distance based on values in array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> (<em>list</em><em>, </em><em>tuple</em><em> or </em><em>numpy.ndarray</em>) – </p></li>
+<li><p><strong>sum</strong> (<em>bool</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>distance</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="shrslib.scores.sequence_duplicated">
+<span class="sig-prename descclassname"><span class="pre">shrslib.scores.</span></span><span class="sig-name descname"><span class="pre">sequence_duplicated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'first'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complementary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#shrslib.scores.sequence_duplicated" title="Permalink to this definition"></a></dt>
+<dd><p>Extract duplicated sequences in list, tuple, numpy.ndarray or pandas.Series.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sequence_list</strong> (<em>list</em><em>, </em><em>tuple</em><em>, </em><em>numpy.ndarray</em><em> or </em><em>pandas.Series</em>) – </p></li>
+<li><p><strong>keep</strong> (<em>str</em>) – Choose ‘first’, ‘last’, ‘both’, or ‘null’. ‘first’ means that the first sequence in duplicates remains, and the others in its duplicates are discarded.</p></li>
+<li><p><strong>local</strong> (<em>bool</em>) – Judge whether the sequence is duplicated or not based on a partial sequence when the local is ‘True’.</p></li>
+<li><p><strong>complementary</strong> (<em>bool</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Result</strong> – Return True when the sequence is duplicated.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to shrslib’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Masayuki TAKAHASHI.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
