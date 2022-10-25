@@ -3,9 +3,9 @@ SampleData for SHRS.
 
 ## Contents
 1. SampleData.zip
-  - MD5:956ea1f898ecc2b4613440931e0e8f8a
-  - SHA1:c61c2d82ccf4ede3c048b2b34a04fe1af4b857c6
-  - SHA256:e3ab7ecf8b574552947684d3259315a53ae8db0aeb764fc30fc7d8058e47bcef
+  - MD5:ac7f74b466cc6c620b780833002619ff
+  - SHA1:a877a08d80cfae7c3402eb4f3fce272bcc7a6925
+  - SHA256:fc2ba29bdea8d718cd10461d2e904ca99e27b550c6f22c4963f479598dd94705
 
 2. Workflow.png
   - MD5:cb4009c85c434f46a8aa24eb05ebe2a5
